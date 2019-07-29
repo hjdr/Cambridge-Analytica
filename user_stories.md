@@ -75,9 +75,7 @@ So I don't let just anyone in to my property \
 I would like to accept booking requests 
 
 As a user \ 
-
 So I don't have to share a bed with a stranger \ 
-
 I should not be able to book on an occupied night 
 
 
