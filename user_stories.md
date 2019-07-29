@@ -32,3 +32,19 @@
 
 
 Test
+
+As a property owner 
+So I can rent out my property
+I would like to list it 
+
+As a potential user
+So I can use Cambridge Analytica 
+I would like to register 
+
+As a signed up user 
+So I can load up my profile
+I would like to sign in 
+
+As a wealthy individual
+So I can rent out one of my many properties
+I would like the option to rent out more than one
