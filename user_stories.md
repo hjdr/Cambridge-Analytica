@@ -55,18 +55,18 @@ So rentees know what they're getting themselves in for \
 I would like to add a description for my listing
 
 As a landlord \
-So rentees know the price of my property \ 
+So rentees know the price of my property  
 I can list the price of my property 
 
 As a user \ 
-So I can take my girlfriend of 18 months away \ 
+So I can take my girlfriend of 18 months away  
 I would like to search for available properties 
 
 As a user   
 So I can book my favourite cottage    
 I would like to book a property
 
-As a landlord \  
+As a landlord   
 So a user doesn't show up whilst I'm in the shower   
 I would like to add a start and end date for my listing 
 
