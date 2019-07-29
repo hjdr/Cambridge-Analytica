@@ -1,20 +1,23 @@
 var Obj = function(name, last_name, sex) {
-  this.name = name,
-  this.last_name = last_name,
+  this.name = name;
+  this.last_name = last_name;
   this.sex = sex;
 };
 
-Obj.prototype.jSON = function() {
-  var json_obj = {
-    name : this.name,
-    last_name : this.last_name,
-    sex : this.sex
+Obj.prototype.jsonStringify = function() {
+  return JSON.stringify(this.createJsonObject());
+};
+
+Obj.prototype.createJsonObject = function() {
+  return {
+    name: this.name,
+    last_name: this.last_name,
+    sex: this.sex
   };
-  return JSON.stringify(json_obj);
 };
 
 var new_object = new Obj('Tim', 'Cole', 'male');
-var json = new_object.jSON();
+var json = new_object.jsonStringify();
 
 console.log(json);
 
