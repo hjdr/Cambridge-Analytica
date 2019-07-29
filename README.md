@@ -4,7 +4,7 @@
 
 Cambridge Analytica’s AirBnB uses a number of open source projects to work properly:
 
-![AirBnb Diagram](./AirBnb Diagram.png)
+![AirBnb Diagram](AirBnb Diagram.png)
 
 #### Codebase
 * [Ruby/ERB] - For logic and HTML enhanced for web apps!
