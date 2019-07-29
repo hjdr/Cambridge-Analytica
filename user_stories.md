@@ -47,7 +47,7 @@ So I can load up my profile \
 I would like to sign in 
 
 As a landlord \
-So rentees can identify my property \ 
+So rentees can identify my property \    
 I can name my listing 
 
 As a landlord \
