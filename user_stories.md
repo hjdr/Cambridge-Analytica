@@ -51,14 +51,14 @@ So rentees can identify my property
 I can name my listing 
 
 As a landlord \
-So rentees know what they're getting themselves in for \  
+So rentees know what they're getting themselves in for   
 I would like to add a description for my listing
 
 As a landlord \
 So rentees know the price of my property  
 I can list the price of my property 
 
-As a user \ 
+As a user  
 So I can take my girlfriend of 18 months away  
 I would like to search for available properties 
 
