@@ -47,11 +47,11 @@ So I can load up my profile \
 I would like to sign in 
 
 As a landlord \
-So rentees can identify my property \    
+So rentees can identify my property  
 I can name my listing 
 
 As a landlord \
-So rentees know what they're getting themselves in for \ 
+So rentees know what they're getting themselves in for \  
 I would like to add a description for my listing
 
 As a landlord \
@@ -62,20 +62,20 @@ As a user \
 So I can take my girlfriend of 18 months away \ 
 I would like to search for available properties 
 
-As a user \  
-So I can book my favourite cottage \   
+As a user   
+So I can book my favourite cottage    
 I would like to book a property
 
 As a landlord \  
-So a user doesn't show up whilst I'm in the shower \  
+So a user doesn't show up whilst I'm in the shower   
 I would like to add a start and end date for my listing 
 
-As a user \ 
-So I don't let just anyone in to my property \ 
+As a user  
+So I don't let just anyone in to my property  
 I would like to accept booking requests 
 
-As a user \  
-So I don't have to share a bed with a stranger \  
+As a user    
+So I don't have to share a bed with a stranger    
 I should not be able to book on an occupied night 
 
 
