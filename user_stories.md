@@ -33,7 +33,7 @@
 
 Test
 
-As a property owner \n
+As a property owner \
 So I can rent out my property
 I would like to list it 
 
