@@ -1,11 +1,12 @@
 class Property {
 
-  constructor(name, id, userName, description, price) {
+  constructor(name, id, userName, description, price, dateRange) {
     this.name = name;
     this.userID = id;
     this.userName = userName;
     this.description = description
     this.price = price
+    this.dateRange = dateRange
   }
 
   getName() {
@@ -32,13 +33,15 @@ class Property {
     var listingsParse = JSON.parse(json);
     var listings = []
     listingsParse.listings.forEach(function(listing) {
-      var newListing = new Property(listing[0])
+      var newListing = new Property(listing[0], listing[1], listing[2], listing[3], listing[4], listing[5])
       listings.push(newListing)
     });
     return listings
   }
 
-  static create(name, userID, userName, description, price) {
-    return JSON.stringify({ name : name, userID : userID, userName : userName , description : description, price : price})
+  static create(name, userID, userName, description, price, dateRange) {
+    return JSON.stringify({ name : name, userID : userID, userName : userName , description : description, price : price, dateRange : dateRange })
   }
 }
+
+{listings: [['Palace',1,'harry123','A fucking great big palace','£2','07/30/2019 - 07/30/2019']]}

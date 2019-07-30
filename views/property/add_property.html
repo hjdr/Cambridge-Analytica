@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html>
-
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <head>
   <link rel="stylesheet" type="text/css" href="../../public/styles/index.css">
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
 </head>
 
 <body>
-  <center><div>
-    <input type='text' id="new_listing_textbox" placeholder="Please enter property name..."></input><br>
-    <textarea id="new_listing_description" rows="4" cols="50" placeholder="Please enter a description about your property name..."></textarea><br>
-    <input type='text' id="new_listing_price" placeholder="Cost per night"></input><br>
-    <button id="new_listing_button" class="new_listing_button">Post New Listing</button>
-  </div>
-  <br>
-  <table id="listings_table">
-  </table>
+  <center>
+    <div>
+      <input type='text' id="new_listing_textbox" placeholder="Please enter property name..."></input><br>
+      <textarea id="new_listing_description" rows="4" cols="50" placeholder="Please enter a description about your property..."></textarea><br>
+      <input type='text' id="new_listing_price" placeholder="Cost per night"></input><br>
+      Please enter dates available: <br><input type="text" id="new_listing_date_range" name="daterange" value="07/30/2019 - 07/30/2019" /><br>
+      <button id="new_listing_button" class="new_listing_button">Post New Listing</button>
+    </div>
+    <br>
+    <table id="listings_table">
+    </table>
 </body>
-
 
 </html>
 
 <script src="../../public/src/property.js"></script>
 <script src="../../public/src/user.js"></script>
-<script src="../../node_modules/jquery/dist/jquery.js"></script>
+<!-- <script src="../../node_modules/jquery/dist/jquery.js"></script> -->
 <script src="../../public/src/property_interface.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
