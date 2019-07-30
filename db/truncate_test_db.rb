@@ -1,6 +1,7 @@
+# require 'active_record'
+# p 'Truncating test DB'
+# p ENV['ENVIRONMENT']
 
-p 'Truncating test DB'
-
-def truncate_test_database
-    ActiveRecord::Base.connection.execute("TRUNCATE properties")
-end
+# def truncate_test_database
+#     ActiveRecord::Base.connection.execute("TRUNCATE UsersTable")
+# end

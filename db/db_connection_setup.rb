@@ -1,3 +1,4 @@
+require 'active_record'
 require './db/db_config.rb'
 
 if ENV['ENVIRONMENT'] == 'test'
