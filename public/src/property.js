@@ -24,7 +24,7 @@ class Property {
     return listings
   }
 
-  static create(name) {
-    return JSON.stringify({ name : name })
+  static create(name, userID, userName) {
+    return JSON.stringify({ name : name, userID : userID, userName : userName })
   }
 }
