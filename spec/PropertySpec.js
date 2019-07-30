@@ -5,19 +5,19 @@ describe ('Property', function() {
 
   beforeEach(function() {
     property = new Property();
-    json = "{\"listings\":[[\"harry\",123],[\"charlie\",456],[\"tim\",789],[\"marvin\",285]]}"
+    json = "{\"listings\":[[\"Buckingham Palace\",123],[\"House of Commons\",456],[\"Pizza Hut\",789],[\"Nandos\",285]]}"
   });
 
   describe ('#all', function() {
     it('returns an array of properties', function() {
       var propertyList = Property.all(json)
-      expect(propertyList[3].getName()).toEqual('marvin')
+      expect(propertyList[3].getName()).toEqual('Nandos')
     })
   })
 
   describe ('#create', function() {
     it('returns a property JSON', function() {
-      expect(Property.create('charlie')).toEqual('{"name":"charlie"}')
+      expect(Property.create('Nandos')).toEqual('{"name":"Nandos"}')
     })
   })
 });

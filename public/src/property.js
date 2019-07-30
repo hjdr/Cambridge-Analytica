@@ -13,9 +13,9 @@ class Property {
   }
 
   static all(json) {
-    var newparse = JSON.parse(json);
+    var listingsParse = JSON.parse(json);
     var listings = []
-    newparse.listings.forEach(function(listing) {
+    listingsParse.listings.forEach(function(listing) {
       var newListing = new Property(listing[0])
       listings.push(newListing)
     });
