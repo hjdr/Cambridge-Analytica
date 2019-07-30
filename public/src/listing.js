@@ -1,7 +1,7 @@
 class Listing {
 
-  constructor(name = 'newlisting') {
-    this.name = name;
+  constructor() {
+    this.name = '';
   }
 
   createJsonString() {
@@ -10,6 +10,10 @@ class Listing {
 
   _createJsonObject() {
     return { name : this.name };
+  }
+
+  newName(name) {
+    this.name = name
   }
 
 }
