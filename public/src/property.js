@@ -1,17 +1,31 @@
 class Property {
 
-  constructor(name, id, userName) {
+  constructor(name, id, userName, description, price) {
     this.name = name;
     this.userID = id;
     this.userName = userName;
-  }
-
-  newName(name) {
-    this.name = name
+    this.description = description
+    this.price = price
   }
 
   getName() {
     return this.name
+  }
+
+  getId() {
+    return this.userID
+  }
+
+  getUsername() {
+    return this.userName
+  }
+
+  getDescription() {
+    return this.description
+  }
+
+  getPrice() {
+    return this.price
   }
 
   static all(json) {
@@ -24,7 +38,7 @@ class Property {
     return listings
   }
 
-  static create(name, userID, userName) {
-    return JSON.stringify({ name : name, userID : userID, userName : userName })
+  static create(name, userID, userName, description, price) {
+    return JSON.stringify({ name : name, userID : userID, userName : userName , description : description, price : price})
   }
 }

@@ -18,7 +18,6 @@ describe ('User', function() {
       expect(userList[1].getPassword()).toEqual('charlierulez')
       expect(userList[1].getEmail()).toEqual('charlie@charlie.charlie')
       expect(userList[1].getId()).toEqual('2')
-
     })
   })
 
