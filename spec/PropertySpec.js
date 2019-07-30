@@ -14,4 +14,10 @@ describe ('Property', function() {
       expect(propertyList[3].getName()).toEqual('marvin')
     })
   })
+
+  describe ('#create', function() {
+    it('returns a property JSON', function() {
+      expect(Property.create('charlie')).toEqual('{"name":"charlie"}')
+    })
+  })
 });

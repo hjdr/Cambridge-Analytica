@@ -26,7 +26,3 @@ class Property {
     return JSON.stringify({ name : name })
   }
 }
-
-var test = JSON.stringify({ listings : [['harry', 123], ['charlie', 456], ['tim', 789], ['marvin', 285]]})
-console.log(Property.all(test))
-console.log(test)
