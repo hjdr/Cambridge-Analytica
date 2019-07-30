@@ -1,11 +1,13 @@
 default: &default
- adapter: postgresql
- encoding: unicode
- pool: 5
- host: localhost
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: localhost
 development:
- <<: *default
- database: makersbnb
-test: &test
- <<: *default
- database: makersbnb_test
+  <<: *default
+  adapter: postgresql
+  database: makersbnb
+test:
+  <<: *default
+  adapter: postgresql
+  database: makersbnb_test

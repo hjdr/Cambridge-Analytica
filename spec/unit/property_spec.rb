@@ -1,5 +1,9 @@
-require './model/property.rb'
+require './lib/model/property.rb'
 
+p "ENVIRONMENT"
+p ENV['ENVIRONMENT']
+p ENV['RACK_ENV']
+ 
 describe Property do 
     describe ".create" do 
         it "adds a new property to the database" do
