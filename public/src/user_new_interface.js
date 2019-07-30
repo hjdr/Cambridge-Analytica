@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
 
-  $("#new_listing_button").click(function() {
+  $("#new_user_button").click(function() {
     var name = $('#new_username_textbox').val()
     var first_name = $('#new_password_textbox').val()
     var surname = $('#new_firstname_textbox').val()

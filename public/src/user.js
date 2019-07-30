@@ -54,9 +54,9 @@ class User {
   static loggedInUser(json) {
     if (json === false) {
       return json
-    }; else {
+    } else {
       var userParse = JSON.parse(json);
-      return new User(userParse[0], userParse[1], userParse[2], userParse[3], userParse[4], userParse[5]
+      return new User(userParse.users[0][0], userParse.users[0][1], userParse.users[0][2], userParse.users[0][3], userParse.users[0][4], userParse.users[0][5])
     }
   };
 }

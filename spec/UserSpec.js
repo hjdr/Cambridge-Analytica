@@ -5,6 +5,7 @@ describe ('User', function() {
   beforeEach(function() {
     user = new User()
     json = "{\"users\":[[\"harry123\",\"Harry\",\"Riley\",\"brum\",\"harry@harry.harry\",\"1\"],[\"charliehere\",\"Charlie\",\"Kettell\",\"charlierulez\",\"charlie@charlie.charlie\",\"2\"]]}"
+    json2 = "{\"users\":[[\"harry123\",\"Harry\",\"Riley\",\"brum\",\"harry@harry.harry\",\"1\"]]}"
   });
 
   describe ('#all', function() {
@@ -23,7 +24,25 @@ describe ('User', function() {
 
   describe ('#create', function() {
     it('returns a user JSON', function() {
-      expect(User.create('harry123', 'Harry', 'Riley', 'brum', 'harry@harry.harry')).toEqual('{"name":"harry123","first_name":"Harry","surname":"Riley","password":"brum","email":"harry@harry.harry"}')
+      expect(User.create('harry123', 'Harry', 'Riley', 'brum', 'harry@harry.harry')).toEqual('{"userName":"harry123","first_name":"Harry","surname":"Riley","password":"brum","email":"harry@harry.harry"}')
+    })
+  })
+
+  describe ('#login', function() {
+    it('returns a username/password JSON', function() {
+      expect(User.login('harry123', 'brum')).toEqual('{"userName":"harry123","password":"brum"}')
+    })
+  })
+
+  describe ('#loggedInUser', function() {
+    it('returns a logged in user object', function() {
+      var user = User.loggedInUser(json2)
+      expect(user.getFirstName()).toEqual('Harry')
+      expect(user.getSurname()).toEqual('Riley')
+      expect(user.getUsername()).toEqual('harry123')
+      expect(user.getPassword()).toEqual('brum')
+      expect(user.getEmail()).toEqual('harry@harry.harry')
+      expect(user.getId()).toEqual('1')
     })
   })
 });

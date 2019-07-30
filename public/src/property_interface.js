@@ -4,8 +4,9 @@ $(document).ready(function() {
 
   $("#new_listing_button").click(function() {
     var name = $('#new_listing_textbox').val()
-    var userID = User.loggedInUser(json);
-    $.post('http://localhost:9292/property/new/', Property.create(name, userID));
+    var id = User.loggedInUser(getLoggedInUserJson())[5];
+    var userName = User.loggedInUser(getLoggedInUserJson())[0];
+    $.post('http://localhost:9292/property/new/', Property.create(name, id, userName));
     updateListings()
   });
 
@@ -22,4 +23,8 @@ $(document).ready(function() {
     // })
     // })
   };
+
+  function getLoggedInUserJson() {
+    return $.get('http://localhost:9292/user/logged_in/')
+  }
 });

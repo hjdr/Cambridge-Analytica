@@ -1,7 +1,9 @@
 class Property {
 
-  constructor(name) {
+  constructor(name, id, userName) {
     this.name = name;
+    this.userID = id;
+    this.userName = userName;
   }
 
   newName(name) {
