@@ -1,8 +1,6 @@
+require './spec/spec_helper.rb'
 require './lib/model/property.rb'
-
-p "ENVIRONMENT"
 p ENV['ENVIRONMENT']
-p ENV['RACK_ENV']
  
 describe Property do 
     describe ".create" do 
