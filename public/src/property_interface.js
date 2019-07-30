@@ -4,7 +4,8 @@ $(document).ready(function() {
 
   $("#new_listing_button").click(function() {
     var name = $('#new_listing_textbox').val()
-    $.post('http://localhost:9292/listing/new/', Property.create(name));
+    var userID = User.loggedInUser(json);
+    $.post('http://localhost:9292/property/new/', Property.create(name, userID));
     updateListings()
   });
 
