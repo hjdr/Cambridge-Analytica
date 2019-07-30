@@ -1,5 +1,4 @@
-require './spec/spec_helper.rb'
-require './lib/model/property.rb'
+require './app/models/property.rb'
 p ENV['ENVIRONMENT']
  
 describe Property do 

@@ -1,4 +1,4 @@
-
+require './db/db_config.rb'
 
 if ENV['ENVIRONMENT'] == 'test'
   p "test db"

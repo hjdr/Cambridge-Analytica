@@ -1,6 +1,5 @@
 require 'active_record'
-require_relative '../../db/db_config.rb'
-require_relative '../../db_connection_setup.rb'
+require './db/db_connection_setup.rb'
 
 class Property < ActiveRecord::Base
     validates :name, presence: true
