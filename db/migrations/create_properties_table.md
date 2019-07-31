@@ -1,5 +1,6 @@
 
 -- Create Database
+rake db:migrate db:test:prepare
 bundle exec rake db:create
 
 -- Create First Migration

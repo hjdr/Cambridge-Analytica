@@ -2,21 +2,28 @@ require 'json'
 require './app/models/userDB.rb'
 
 class DatabaseHandler
-    def self.convert_from_json(json)
-        JSON.parse(json)
-    end
 
     def self.add_to_DB(json)
         user = convert_from_json(json)
         users = Users.create(user_name: user["userName"], first_name: user["first_name"], surname: user["surname"], password: user["password"], email: user["email"])
-        users
     end
 
-    def self.delete_from_DB(user)
-        user1 = Users.find(user.id)
-        p "BE GONE: "
-        p user1
-        user1.destroy()
+    def self.confirm_user_exists(json)
+      user = convert_from_json(json)
+      user_name = Users.find_by(user_name: user['userName'])
+      if user_name.user_name == user['userName'] && user_name.password == user['password']
+        user_name
+      else
+        "No username or password"
+      end
     end
+
+
+    private
+
+    def self.convert_from_json(json)
+        JSON.parse(json)
+    end
+
 
 end
