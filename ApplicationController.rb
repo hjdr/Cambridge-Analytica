@@ -27,7 +27,12 @@ enable :sessions
     File.read("views/user/login.html")
   end
 
+  get '/user/all/' do
+    'tim'
+  end
+
   get '/property/new/' do
+    'Tim'
     p session[:loggedInUser]
     File.read("views/property/add_property.html")
   end

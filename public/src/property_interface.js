@@ -2,6 +2,10 @@ $(document).ready(function() {
 
   updateListings()
 
+  $.get('http://localhost:9292/user/all/', function(data) {
+    console.log(data)
+  })
+
   var id = User.loggedInUser(getLoggedInUserJson()).getId();
   var userName = User.loggedInUser(getLoggedInUserJson()).getUsername();
 
@@ -16,17 +20,17 @@ $(document).ready(function() {
   });
 
   function updateListings() {
-    let listingsJSON = "{\"listings\": [[\"Palace\",1,\"harry123\",\"A fucking great big palace\",\"£2\",\"07/30/2019 - 07/30/2019\"]]}";
-    var propertyList = Property.all(listingsJSON)
-    propertyList.forEach(function(property) {
-      $('#listings_table').append(propertyHTML(property));
-    })
-    // $.get('http://localhost:9292/listing/all/', function(listings) {
-    //   var propertyList = Property.all(listings)
-    //   propertyList.forEach(function(property) {
-    //     $('#listings_table').append(propertyHTML(property));
-    //   })
+    // let listingsJSON = "{\"listings\": [[\"Palace\",1,\"harry123\",\"A fucking great big palace\",\"£2\",\"07/30/2019 - 07/30/2019\"]]}";
+    // var propertyList = Property.all(listingsJSON)xw
+    // propertyList.forEach(function(property) {
+    //   $('#listings_table').append(propertyHTML(property));
     // })
+    $.get('http://localhost:9292/property/new/', function(listings) {
+      var propertyList = Property.all(listings)
+      propertyList.forEach(function(property) {
+        $('#listings_table').append(propertyHTML(property));
+      })
+    })
   };
 
   function propertyHTML(property) {
@@ -34,7 +38,7 @@ $(document).ready(function() {
   }
 
   function updateUserListings() {
-    $.get('http://localhost:9292/listing/all/user', function(listings) {
+    $.get('http://localhost:9292/user/all/', function(listings) {
       var propertyList = Property.all(listings)
       propertyList.forEach(function(property) {
         $('#listings_table').append("<tr><td>" + property.name + "</td></tr>");
