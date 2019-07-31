@@ -8,6 +8,7 @@ feature 'sign up new user' do
     fill_in :surname, with: 'Cole'
     fill_in :email, with: 'tim@timmail.com'
     click_button 'Sign Up'
-    expect(page).to have_text "Welcome"
+    wait_for_ajax
+    expect(page).to have_text "Welcome Tim"
   end
 end

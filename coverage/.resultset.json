@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/timothycole/OneDrive/Makers/Month_3/Cambridge-Analytica/spec/feature_tests/view_peeps_spec.rb": [
+      "/Users/timothycole/OneDrive/Makers/Month_3/Cambridge-Analytica/spec/feature_tests/sign_up_new_user_spec.rb": [
         1,
         1,
         1,
@@ -13,6 +13,7 @@
         1,
         1,
         1,
+        0,
         null,
         null
       ],
@@ -62,6 +63,6 @@
         null
       ]
     },
-    "timestamp": 1564608611
+    "timestamp": 1564609516
   }
 }
