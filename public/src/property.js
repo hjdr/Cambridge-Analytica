@@ -43,5 +43,3 @@ class Property {
     return JSON.stringify({ name : name, userID : userID, userName : userName , description : description, price : price, dateRange : dateRange })
   }
 }
-
-{listings: [['Palace',1,'harry123','A fucking great big palace','£2','07/30/2019 - 07/30/2019']]}
