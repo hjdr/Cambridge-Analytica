@@ -9,5 +9,5 @@
 #             # expect(property).to be_a(Property)
 #             expect(user1.first_name).to eq("Marvin")
 #         end
-#     end
+    # end
 # end
