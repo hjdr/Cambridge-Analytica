@@ -46,39 +46,4 @@ $(document).ready(function() {
     return $.get('http://localhost:9292/user/logged_in/')
   };
 
-
-  function dateRangePicker() {
-    $('input[name="daterange"]').daterangepicker({
-      opens: 'left'
-    }, function(start, end, label) {
-      console.log(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'))
-      return (start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
-    });
-  }
 });
-
-$(function getDate() {
-  var today = new Date();
-  var dd = String(today.getDate()).padStart(2, '0');
-  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-  var yyyy = today.getFullYear();
-
-  today = mm + '/' + dd + '/' + yyyy;
-  $('input[name="daterange"]').daterangepicker({
-    "startDate": today,
-    "endDate": today,
-  }, function(start, end, label) {
-    console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-  });
-});
-
-// $(function getDate() {
-//   $('input[name="daterange"]').daterangepicker({
-//       "startDate": "07/24/2019",
-//       "endDate": "07/30/2019",
-//       "minDate": "08/01/2019",
-//       "maxDate": "08/05/2019"
-//   }, function(start, end, label) {
-//     console.log('New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')');
-//   });
-// });
