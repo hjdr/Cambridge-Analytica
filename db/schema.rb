@@ -10,14 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_152239) do
+ActiveRecord::Schema.define(version: 2019_07_31_162642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "add_property_id_to_users", force: :cascade do |t|
+  end
+
   create_table "properties", force: :cascade do |t|
     t.string "name", null: false
-    t.string "userId", null: false
+    t.string "user_id", null: false
     t.string "userName", null: false
     t.string "description", null: false
     t.string "price", null: false
@@ -29,6 +32,8 @@ ActiveRecord::Schema.define(version: 2019_07_31_152239) do
     t.string "surname", null: false
     t.string "password", null: false
     t.string "email", null: false
+    t.integer "property_id"
+    t.index ["property_id"], name: "index_users_on_property_id"
   end
 
 end
