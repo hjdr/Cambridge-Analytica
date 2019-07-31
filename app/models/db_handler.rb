@@ -9,7 +9,7 @@ class DatabaseHandler
     def self.add_to_DB(json)
         user = convert_from_json(json)
         users = Users.create(user_name: user["userName"], first_name: user["first_name"], surname: user["surname"], password: user["password"], email: user["email"])
-        users
+        return users.to_json
     end
 
     def self.delete_from_DB(user)

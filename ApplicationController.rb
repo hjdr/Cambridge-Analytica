@@ -10,7 +10,6 @@ enable :sessions
 
   configure do
     enable :sessions
-
     enable :static
     set :static, true
   end
@@ -27,19 +26,26 @@ enable :sessions
     File.read("views/user/login.html")
   end
 
+  get '/user/logged_in/' do
+    session[:logged_in_user]
+  end
+
   get '/user/all/' do
-    'tim'
+
   end
 
   get '/property/new/' do
-    'Tim'
-    p session[:loggedInUser]
-    File.read("views/property/add_property.html")
+
+  end
+
+  post '/property/new/' do
+    payload = request.body.read
+    DatabaseHandler.add_property_to_DB(payload)
   end
 
   post '/user/new/' do
     payload = request.body.read
-    session[:loggedInUser] = DatabaseHandler.add_to_DB(payload)
+    session[:logged_in_user] = DatabaseHandler.add_to_DB(payload)
   end
 
   run! if app_file == $PROGRAM_NAME
