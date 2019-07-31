@@ -6,4 +6,4 @@ bundle exec rake db:create
 bundle exec rake db:new_migration[create_properties]
 bundle exec rake db:new_migration[create_users]
 -- Invoke
-bundle exec rake db:migrate 
+bundle exec rake db:migrate
