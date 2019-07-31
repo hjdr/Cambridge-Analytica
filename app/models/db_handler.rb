@@ -1,7 +1,7 @@
 require 'json'
 require './app/models/userDB.rb'
 
-class JsonConverter 
+class DatabaseHandler 
     def self.convert_from_json(json)
         JSON.parse(json)
     end

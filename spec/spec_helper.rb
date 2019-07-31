@@ -2,7 +2,6 @@ ENV['ENVIRONMENT'] = 'test'
 
 require './db/db_connection_setup.rb'
 require './db/truncate_test_db'
-# require './app/models/usersDB.rb'
 require 'active_record'
 
 ActiveRecord::Migration.maintain_test_schema!
