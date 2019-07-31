@@ -20,6 +20,17 @@ describe DatabaseHandler do
         end
     end
 
+    describe '.add_property_to_DB' do
+        it('Adds to the Database') do
+            json = '{"name":"buckingham palace","userId":1,"userName":"timdog","description":"a palace","price":"£2"}'
+            DatabaseHandler.add_property_to_DB(json)
+
+            property = Property.find_by(name: "buckingham palace")
+            expect(property.name).to eq("buckingham palace")
+
+        end
+    end
+
     # describe '.delete_from_DB' do
     #     it('Delete from the Database') do
     #         json = '{"user_name":"bdraps","first_name":"Betty","surname":"Drapper","password":"nyc","email":"bdraps@mm.com"}'
