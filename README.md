@@ -6,7 +6,7 @@ We are making a web application that allows user's to list spaces they have avai
 
 Cambridge Analytica’s AirBnB uses a number of open source projects to work properly:
 
-![AirBnb Diagram](AirBnb_Diagram.png)
+![AirBnb Diagram](images/AirBnb_Diagram.png)
 
 #### Codebase
 * [Ruby/ERB] - For logic and HTML enhanced for web apps!
@@ -21,6 +21,3 @@ Cambridge Analytica’s AirBnB uses a number of open source projects to work pro
 #### Database
 * [Postgres] - relational database management system!
 * [Table Plus] - GUI tools to create, access, query & edit multiple relational databases
-
-
-
