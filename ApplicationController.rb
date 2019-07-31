@@ -22,6 +22,11 @@ enable :sessions
     File.read("views/user/new.html")
   end
 
+  get '/user/all_listings/' do
+    user = JSON.parse(session[:logged_in_user])
+    return DatabaseHandler.all_user_listings(user)
+  end
+
   get '/user/login/' do
     File.read("views/user/login.html")
   end
@@ -35,7 +40,7 @@ enable :sessions
   end
 
   get '/property/new/' do
-
+    File.read("views/property/new.html")
   end
 
   post '/property/new/' do

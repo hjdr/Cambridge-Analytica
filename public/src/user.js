@@ -44,11 +44,20 @@ class User {
   }
 
   static create(userName, first_name, surname, password, email) {
-    return JSON.stringify({ userName : userName, first_name : first_name, surname : surname, password : password, email : email })
+    return JSON.stringify({
+      userName: userName,
+      first_name: first_name,
+      surname: surname,
+      password: password,
+      email: email
+    })
   }
 
   static login(userName, password) {
-    return JSON.stringify({ userName : userName, password : password})
+    return JSON.stringify({
+      userName: userName,
+      password: password
+    })
   }
 
   static loggedInUser(json) {

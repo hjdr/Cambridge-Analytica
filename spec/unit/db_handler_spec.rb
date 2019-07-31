@@ -11,20 +11,18 @@ describe DatabaseHandler do
 
     describe '.add_to_DB' do
         it('Adds to the Database') do
-            json = '{"user_name":"harry123","first_name":"Marvin","surname":"Riley","password":"brum","email":"harry@harry.harry"}'
+            json = "{\"userName\":\"harry123\",\"first_name\":\"Marvin\",\"surname\":\"Riley\",\"password\":\"brum\",\"email\":\"harry@harry.harry\"}"
             DatabaseHandler.add_to_DB(json)
-
             user = Users.find_by(first_name: "Marvin")
-            expect(user.first_name).to eq("Marvin")
+            expect(user.first_name).to eq('Marvin')
 
         end
     end
 
     describe '.add_property_to_DB' do
         it('Adds to the Database') do
-            json = '{"name":"buckingham palace","userId":1,"userName":"timdog","description":"a palace","price":"£2"}'
+            json = '{"name":"buckingham palace","userID":1,"userName":"timdog","description":"a palace","price":"£2"}'
             DatabaseHandler.add_property_to_DB(json)
-
             property = Property.find_by(name: "buckingham palace")
             expect(property.name).to eq("buckingham palace")
 

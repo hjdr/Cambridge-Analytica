@@ -3,9 +3,9 @@
 bundle exec rake db:create
 
 -- Create First Migration
-bundle exec rake db:new_migration[create_properties]
-bundle exec rake db:new_migration[create_users]
-bundle exec rake db:new_migration[create_users]
+bundle exec rake db:new_migration[CreateUsers]
+bundle exec rake db:new_migration[CreateProperties]
+bundle exec rake db:new_migration[CreateAddPropertyIdToUsers]
 -- Invoke
 bundle exec rake db:migrate
-rake db:migrate db:test:prepare
+bundle exec rake db:test:prepare

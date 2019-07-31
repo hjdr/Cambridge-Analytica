@@ -7,5 +7,5 @@ $(document).ready(function() {
     $.post('http://localhost:9292/user/new/', User.loggin(userName, password));
   });
 
-  };
+};
 });
