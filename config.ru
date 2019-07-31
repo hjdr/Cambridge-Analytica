@@ -1,2 +1,2 @@
-require_relative "./app/controllers/ApplicationController.rb"
+require_relative "./ApplicationController.rb"
 run ApplicationManager

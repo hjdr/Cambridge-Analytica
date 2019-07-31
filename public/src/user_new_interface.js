@@ -8,8 +8,10 @@ $(document).ready(function() {
     var password = $('#new_surname_textbox').val()
     var email = $('#new_email_textbox').val()
 
-    $.post('http://localhost:9292/user/new/', User.create(name, first_name, surname, password, email));
+    $.post("http://localhost:9292/user/new/", User.create(name, first_name, surname, password, email),
+      function() {
+        window.location.replace("http://localhost:9292/property/new/");
+      });
   });
 
-  };
-});
+})
