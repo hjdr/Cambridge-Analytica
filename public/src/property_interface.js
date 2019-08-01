@@ -7,22 +7,25 @@ $(document).ready(function() {
       var price = $('#new_listing_price').val();
       var user = JSON.parse(data)
       $.post('http://localhost:9292/property/new/', Property.create(name, user.id, user.user_name, description, price));
+      console.log(user)
       updateListings()
     })
   });
 
   function updateListings() {
     $.get('http://localhost:9292/user/all_listings/', function(data) {
+      console.log(data)
       var propertyList = Property.all(data)
       clearProperties()
       propertyList.forEach(function(property) {
+        console.log(property)
         $('#listings_table').append(propertyHTML(property));
       })
     })
   };
 
   function propertyHTML(property) {
-    return "<tr><td>" + property.name + "</td><td>" + property.description + "</td><td>" + property.price + "</td></tr>"
+    return "<tr><td>Property name: " + property.name + "</td><td>Property description: " + property.description + "</td><td>Property price: " + property.price + "</td><td>Host: " + property.userName + "</td></tr>"
   }
 
   function clearProperties(property) {
