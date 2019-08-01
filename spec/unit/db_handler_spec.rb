@@ -2,12 +2,6 @@ require './app/models/db_handler.rb'
 
 
 describe DatabaseHandler do
-    describe '.convert_from_json' do
-        it("Converts JSON to a hash format") do
-            json = '{"userName":"harry123","first_name":"Marvin","surname":"Riley","password":"brum","email":"harry@harry.harry"}'
-            expect(DatabaseHandler.convert_from_json(json)).to be_a_kind_of(Hash)
-        end
-    end
 
     describe '.add_to_DB' do
         it('Adds to the Database') do
@@ -28,6 +22,31 @@ describe DatabaseHandler do
 
         end
     end
+
+    describe '.confirm_user_exists' do
+      it 'compares username and password to database records' do
+        json = '{"userName":"harry123","first_name":"Marvin","surname":"Riley","password":"brum","email":"harry@harry.harry"}'
+        DatabaseHandler.add_to_DB(json)
+        expect(DatabaseHandler.confirm_user_exists('{"userName":"harry123", "password":"brum"}')).to eq  true
+
+
+      end
+        it 'compares username and password to database records' do
+          json = '{"userName":"harry123","first_name":"Marvin","surname":"Riley","password":"brum","email":"harry@harry.harry"}'
+          DatabaseHandler.add_to_DB(json)
+          expect(DatabaseHandler.confirm_user_exists('{"userName":"charlie123", "password":"brum"}')).to eq  false
+        end
+
+        it 'compares username and password to database records' do
+          json = '{"userName":"harry123","first_name":"Marvin","surname":"Riley","password":"brum","email":"harry@harry.harry"}'
+          DatabaseHandler.add_to_DB(json)
+          expect(DatabaseHandler.confirm_user_exists('{"userName":"harry123", "password":"brummy"}')).to eq  false
+        end
+
+    end
+
+    # describe
+# ('{"userName":"harry123", "password":"brum"}')
 
     # describe '.delete_from_DB' do
     #     it('Delete from the Database') do

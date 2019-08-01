@@ -48,6 +48,12 @@ enable :sessions
     DatabaseHandler.add_property_to_DB(payload)
   end
 
+  post '/user/login/attempt' do
+    payload = request.body.read
+    session[:loggedInUser] = payload
+    DatabaseHandler.confirm_user_exists(payload)
+  end
+
   post '/user/new/' do
     payload = request.body.read
     session[:logged_in_user] = DatabaseHandler.add_to_DB(payload)
