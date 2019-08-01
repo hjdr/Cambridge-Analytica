@@ -12,9 +12,10 @@ class DatabaseHandler
 
     def self.confirm_user_exists(json)
       user = convert_from_json(json)
-        if check_user_in_db(user)
+      p check_user_in_db(user)
+        if check_user_in_db(user) != nil
           user_name = Users.find_by(user_name: user['userName'])
-          'true' if user_name.password == user['password']
+          check_user_in_db(user).to_json if user_name.password == user['password']
         else
           'false'
         end
@@ -24,7 +25,7 @@ class DatabaseHandler
     private
 
     def self.check_user_in_db(user)
-      Users.find_by(user_name: user['userName']) != nil
+      Users.find_by(user_name: user['userName'])
     end
 
     def self.convert_from_json(json)

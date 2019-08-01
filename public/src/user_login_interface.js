@@ -7,15 +7,10 @@ $(document).ready(function() {
 
     $.post('http://localhost:9292/user/login/attempt', User.login(userName, password),
       function(data){
-        if(data=='true'){
-          console.log(data)
-          window.location.replace("http://localhost:9292/property/new/");
-        } else {
-          console.log(data)
-
-          console.log('error')
-
+        if(data=='false'){
           $("#incorrect_password").html("silly bastard");
+        } else {
+          window.location.replace("http://localhost:9292/property/new/");
       };
     });
   });

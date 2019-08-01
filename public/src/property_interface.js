@@ -7,18 +7,15 @@ getLoggedInUserJson()
       var price = $('#new_listing_price').val();
       var user = JSON.parse(data)
       $.post('http://localhost:9292/property/new/', Property.create(name, user.id, user.user_name, description, price));
-      console.log(user)
       updateListings()
     })
   });
 
   function updateListings() {
     $.get('http://localhost:9292/user/all_listings/', function(data) {
-      console.log(data)
       var propertyList = Property.all(data)
       clearProperties()
       propertyList.forEach(function(property) {
-        console.log(property)
         $('#listings_table').append(propertyHTML(property));
       })
     })
