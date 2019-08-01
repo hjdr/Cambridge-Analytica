@@ -3,13 +3,52 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="../../public/styles/index.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
+<style>
+    .btnWidth {
+      width: 8rem;
+    }
+  
+    .fontAv {
+      font-family: Avenir;
+    }
+
+    .form-control{
+      width: 25rem;
+    }
+
+    .bottom {
+      margin-bottom: 30px;
+    }
+
+    .zero {
+      margin: 0;
+    }
+  
+  </style>
+
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand fontAv" href="#">Makers B'n'B</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active fontAv"><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </nav>
   <center><div>
-    <input type="text" id="username_textbox" placeholder="Please enter username..."></><br>
-    <input type="password" id="password_textbox" placeholder="Please enter password..."></textarea><br>
-    <button id="login_button" class="new_listing_button">Log In</button>
+    <h3 class="bottom">Log In</h3>
+
+    <input type="text" id="username_textbox" placeholder="Please enter username..." class="form-control"><br>
+    <input type="password" id="password_textbox" placeholder="Please enter password..." class="form-control"></textarea><br>
+    <br>
+    <button id="login_button" class="new_listing_button btn btn-primary active btnWidth fontAv">Log In</button>
   </div>
   <br>
 </body>

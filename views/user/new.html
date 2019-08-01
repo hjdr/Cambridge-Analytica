@@ -3,17 +3,56 @@
 
 <head>
   <link rel="stylesheet" type="text/css" href="/styles/index.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 
+<style>
+    .btnWidth {
+      width: 8rem;
+    }
+  
+    .fontAv {
+      font-family: Avenir;
+    }
+
+    .form-control{
+      width: 25rem;
+    }
+
+    .bottom {
+      margin-bottom: 30px;
+    }
+
+    .zero {
+      margin: 0;
+    }
+  
+  </style>
+
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand fontAv" href="#">Makers B'n'B</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active fontAv"><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </nav>
   <center>
     <div>
-      <input type="text" id="new_username_textbox" name="username" placeholder="Please enter username..."></><br>
-      <input type="password" id="new_password_textbox" name="password" placeholder="Please enter password..."><br>
-      <input type="text" id="new_firstname_textbox" name="first_name" placeholder="Please enter first name..."><br>
-      <input type="text" id="new_surname_textbox" name="surname" placeholder="Please enter surname..."><br>
-      <input type="text" id="new_email_textbox" name="email" placeholder="Please enter email..."><br>
-      <button id="new_user_button" name="sign_up" class="new_listing_button">Sign Up</button>
+        <h3 class="bottom">Sign Up</h3>
+
+      <input type="text" id="new_username_textbox" name="username" placeholder="Please enter username..." class="form-control"><br>
+      <input type="password" id="new_password_textbox" name="password" placeholder="Please enter password..." class="form-control"><br>
+      <input type="text" id="new_firstname_textbox" name="first_name" placeholder="Please enter first name..." class="form-control"><br>
+      <input type="text" id="new_surname_textbox" name="surname" placeholder="Please enter surname..." class="form-control"><br>
+      <input type="text" id="new_email_textbox" name="email" placeholder="Please enter email..." class="form-control"><br>
+      <br>
+      <button id="new_user_button" name="sign_up" class="new_listing_button btn btn-primary active btnWidth fontAv">Sign Up</button>
     </div>
     <br>
 </body>
