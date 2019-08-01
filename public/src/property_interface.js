@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+getLoggedInUserJson()
   $("#new_listing_button").click(function() {
     $.get('http://localhost:9292/user/logged_in/', function(data) {
       var name = $('#new_listing_name').val();
@@ -34,7 +34,8 @@ $(document).ready(function() {
 
   function getLoggedInUserJson() {
     return $.get('http://localhost:9292/user/logged_in/', function(data) {
-      return data
+      var user = JSON.parse(data)
+      $('#logged_in_username').text(user.first_name)
     })
   };
 
