@@ -10,16 +10,20 @@ class DatabaseHandler
 
     def self.confirm_user_exists(json)
       user = convert_from_json(json)
-      user_name = Users.find_by(user_name: user['userName'])
-      if user_name.user_name == user['userName'] && user_name.password == user['password']
-        user_name
-      else
-        "No username or password"
-      end
+        if check_user_in_db(user)
+          user_name = Users.find_by(user_name: user['userName'])
+          'true' if user_name.password == user['password']
+        else
+          'false'
+        end
     end
 
 
     private
+
+    def self.check_user_in_db(user)
+      Users.find_by(user_name: user['userName']) != nil
+    end
 
     def self.convert_from_json(json)
         JSON.parse(json)
@@ -27,3 +31,7 @@ class DatabaseHandler
 
 
 end
+
+p DatabaseHandler.add_to_DB('{"userName":"kettz","password":"charlie"}')
+
+p DatabaseHandler.confirm_user_exists('{"userName":"kettz","password":"charlie"}')

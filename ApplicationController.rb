@@ -32,13 +32,10 @@ enable :sessions
     File.read("views/property/add_property.html")
   end
 
-  get '/user/login/attempt' do
+  post '/user/login/attempt' do
     payload = request.body.read
-    if DatabaseHandler.confirm_user_exists(payload)
-      session[:loggedInUser] = payload
-    else
-      false
-    end
+    session[:loggedInUser] = payload
+    DatabaseHandler.confirm_user_exists(payload)
   end
 
   post '/user/new/' do
