@@ -5,9 +5,7 @@ default: &default
   host: localhost
 development:
   <<: *default
-  adapter: postgresql
   database: makersbnb
-test:
+test: &test
   <<: *default
-  adapter: postgresql
   database: makersbnb_test

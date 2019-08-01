@@ -10,7 +10,6 @@ enable :sessions
 
   configure do
     enable :sessions
-
     enable :static
     set :static, true
   end
@@ -23,13 +22,30 @@ enable :sessions
     File.read("views/user/new.html")
   end
 
+  get '/user/all_listings/' do
+    user = JSON.parse(session[:logged_in_user])
+    return DatabaseHandler.all_user_listings(user)
+  end
+
   get '/user/login/' do
     File.read("views/user/login.html")
   end
 
+  get '/user/logged_in/' do
+    session[:logged_in_user]
+  end
+
+  get '/user/all/' do
+
+  end
+
   get '/property/new/' do
-    p session[:loggedInUser]
-    File.read("views/property/add_property.html")
+    File.read("views/property/new.html")
+  end
+
+  post '/property/new/' do
+    payload = request.body.read
+    DatabaseHandler.add_property_to_DB(payload)
   end
 
   post '/user/login/attempt' do
@@ -40,7 +56,7 @@ enable :sessions
 
   post '/user/new/' do
     payload = request.body.read
-    session[:loggedInUser] = DatabaseHandler.add_to_DB(payload)
+    session[:logged_in_user] = DatabaseHandler.add_to_DB(payload)
   end
 
   run! if app_file == $PROGRAM_NAME

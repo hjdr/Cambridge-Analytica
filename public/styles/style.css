@@ -1,0 +1,28 @@
+.btnWidth {
+    width: 8rem;
+}
+  
+.fontAv {
+  font-family: Avenir;
+}
+
+.form-control{
+  width: 25rem;
+}
+
+.bottom {
+  margin-bottom: 30px;
+}
+
+.top {
+  margin-top: 40rem;
+}
+
+.page-footer {
+  margin-top: 40rem;
+}
+
+.zero {
+  margin: 0;
+}
+  

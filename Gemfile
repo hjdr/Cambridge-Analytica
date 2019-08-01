@@ -13,3 +13,7 @@ gem 'pg'
 gem 'rspec'
 gem 'simplecov', require: false
 gem 'simplecov-console', require: false
+
+gem "capybara", "~> 3.27"
+
+gem "rubocop", "~> 0.74.0"

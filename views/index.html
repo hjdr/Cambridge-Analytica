@@ -2,27 +2,48 @@
 <html>
 
 <head>
-  <link rel="stylesheet" type="text/css" href="../public/styles/index.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/styles/style.css"/>
+
 </head>
 
 <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand fontAv" href="#">Makers B'n'B</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active fontAv"><a href="#">Home</a></li>
+      </ul>
+    </div>
+  </nav>
   <center><div>
-<h2>Welcome to Cambri.... We mean Makers B'n'B</h2>
-  <form action="/user/login/" method="get" >
-     <button id="login_button" class="new_listing_button">Log In</button>
+<h2 class="fontAv">Welcome to Cambri.... We mean Makers B'n'B</h2>
+<br>
+<br>
+<form action="/user/login/" method="get" >
+    <button id="login_button" class="new_listing_button btn btn-default btnWidth fontAv">Log In</button>
   </form>
+  <br>
   <form action="/user/new/" method="get" >
-    <button class="new_listing_button">Sign Up</button>
-  </form>
+    <button class="new_listing_button btn btn-default btnWidth fontAv">Sign Up</button></form>
   </div>
   <br>
+
+  <footer class="page-footer font-small blue top">
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright
+      <a href="#"> Cambridge Analytica</a>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
 </body>
 
 
 
 </html>
-
-<script src="../public/src/property.js"></script>
-<script src="../public/src/user.js"></script>
-<script src="../node_modules/jquery/dist/jquery.js"></script>
-<script src="../public/src/index_interface.js"></script>
