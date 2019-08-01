@@ -1,5 +1,8 @@
 $(document).ready(function() {
-getLoggedInUserJson()
+  getLoggedInUserJson()
+  updateListings()
+  console.log('test')
+
   $("#new_listing_button").click(function() {
     $.get('http://localhost:9292/user/logged_in/', function(data) {
       var name = $('#new_listing_name').val();
@@ -17,13 +20,21 @@ getLoggedInUserJson()
       clearProperties()
       propertyList.forEach(function(property) {
         $('#listings_table').append(propertyHTML(property));
+        $("#" + property.id).click(function() {
+          $.get('http://localhost:9292/user/logged_in/', function(loggedInUser) {
+            var user = JSON.parse(loggedInUser)
+            $.post('http://localhost:9292/booking/new/', Booking.create(user.id, user.id, property.id, property.name, '', '', false))
+            console.log('born to win')
+          })
+        })
       })
     })
   };
 
   function propertyHTML(property) {
-    return "<tr><td>Property name: " + property.name + "</td><td>Property description: " + property.description + "</td><td>Property price: " + property.price + "</td><td>Host: " + property.userName + "</td><button id='" + property.id + "_button'>BOOK NOW</button></td>/tr>"
+    return "<tr><td>Property name: " + property.name + "</td><td>Property description: " + property.description + "</td><td>Property price: " + property.price + "</td><td>Host: " + property.userName + "</td><td><button class='new_booking_button' id='" + property.id + "'>BOOK NOW</button></td></tr>";
   }
+
 
   function clearProperties(property) {
     $('#listings_table').replaceWith("<table id='listings_table'></table>");

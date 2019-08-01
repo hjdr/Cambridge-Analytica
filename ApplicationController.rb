@@ -33,7 +33,6 @@ enable :sessions
 
   get '/user/logged_in/' do
     session[:logged_in_user]
-    p session[:logged_in_user]
   end
 
   get '/user/all/' do
@@ -52,7 +51,6 @@ enable :sessions
   post '/user/login/attempt' do
     payload = request.body.read
     session[:logged_in_user] = DatabaseHandler.confirm_user_exists(payload)
-    p
   end
 
   post '/user/new/' do
@@ -62,6 +60,10 @@ enable :sessions
 
   post '/user/logout/' do
     session[:logged_in_user] = nil
+  end
+
+  post '/booking/new/' do
+    p 'yes'
   end
 
   run! if app_file == $PROGRAM_NAME

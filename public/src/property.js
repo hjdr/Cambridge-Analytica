@@ -1,11 +1,12 @@
 class Property {
 
-  constructor(name, id, userName, description, price) {
+  constructor(name, userid, userName, description, price, id) {
     this.name = name;
-    this.userID = id;
+    this.userID = userid;
     this.userName = userName;
     this.description = description
     this.price = price
+    this.id = id
   }
 
   getName() {
@@ -31,8 +32,11 @@ class Property {
   static all(json) {
     var listingsParse = JSON.parse(json);
     var listings = []
+    console.log(listingsParse)
     listingsParse.forEach(function(listing) {
-      var newListing = new Property(listing.name, listing.id, listing.userName, listing.description, listing.price)
+      console.log(listing)
+      var newListing = new Property(listing.name, listing.userID, listing.userName, listing.description, listing.price, listing.id)
+      console.log(newListing)
       listings.push(newListing)
     });
     return listings
