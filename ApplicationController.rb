@@ -60,6 +60,10 @@ enable :sessions
     session[:logged_in_user] = DatabaseHandler.add_to_DB(payload)
   end
 
+  post '/user/logout/' do
+    session[:logged_in_user] = nil
+  end
+
   run! if app_file == $PROGRAM_NAME
 
 end

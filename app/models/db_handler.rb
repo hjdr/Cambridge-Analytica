@@ -15,7 +15,7 @@ class DatabaseHandler
       p check_user_in_db(user)
         if check_user_in_db(user) != nil
           user_name = Users.find_by(user_name: user['userName'])
-          check_user_in_db(user).to_json if user_name.password == user['password']
+          check_user_in_db(user).to_json   if user_name.password == user['password']
         else
           'false'
         end

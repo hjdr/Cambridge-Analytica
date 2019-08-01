@@ -36,4 +36,8 @@ getLoggedInUserJson()
     })
   };
 
+  $('#log_out_link').click(function() {
+    $.post('http://localhost:9292/user/logout/');
+  });
+
 });
