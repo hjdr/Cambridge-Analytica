@@ -10,12 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_31_162642) do
+ActiveRecord::Schema.define(version: 2019_08_01_144954) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "add_property_id_to_users", force: :cascade do |t|
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.string "renter_id", null: false
+    t.string "landlord_id", null: false
+    t.string "property_id", null: false
+    t.string "property_name", null: false
+    t.string "start_date", null: false
+    t.string "end_date", null: false
+    t.string "confirmed", null: false
   end
 
   create_table "properties", force: :cascade do |t|

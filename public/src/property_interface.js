@@ -22,7 +22,7 @@ getLoggedInUserJson()
   };
 
   function propertyHTML(property) {
-    return "<tr><td>Property name: " + property.name + "</td><td>Property description: " + property.description + "</td><td>Property price: " + property.price + "</td><td>Host: " + property.userName + "</td></tr>"
+    return "<tr><td>Property name: " + property.name + "</td><td>Property description: " + property.description + "</td><td>Property price: " + property.price + "</td><td>Host: " + property.userName + "</td><button id='" + property.id + "_button'>BOOK NOW</button></td>/tr>"
   }
 
   function clearProperties(property) {
