@@ -16,7 +16,7 @@ $(document).ready(function() {
       updateListings()
   });
 
-  $('#new_listing_button').one('click', function() {
+  $('#listing_buttons').one('click', function() {
     $('#new_listing_table').animate({
       'marginLeft': "-=300px"
     });

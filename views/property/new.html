@@ -29,15 +29,15 @@
       </div>
     </nav>
   <center>  <h3 class="bottom">Welcome <span id="logged_in_username"></span>!</h3>
-
-     <div id='new_listing_table' class="inliner" style='position: absolute'>
+<br>
+     <div id='new_listing_table' class="inliner" style='position: absolute;margin-left: -130px'>
        <input type='text' id="new_listing_name" name="name" placeholder="Please enter property name..." class="form-control"></input><br>
        <textarea id="new_listing_description" rows="4" cols="50" placeholder="Please enter a description about your property..." class="form-control"></textarea><br>
        <input type='text' id="new_listing_price" placeholder="Cost per night" class="form-control"></input><br>
        <h5 class="zero">Please enter dates available:</h5> <br><input type="text" id="datepicker" class="form-control"><br>
-       <br>
+       <br><div id='listing_buttons'>
        <button id="new_listing_button" class="new_listing_button btn btn-primary active">Post New Listing</button>
-       <button id="view_properties_button" class="new_listing_button btn btn-primary active">View Properties</button>
+       <button id="view_properties_button" class="new_listing_button btn btn-primary active">View Properties</button></div>
      </div>
    <br><div  class="inliner" style='position: absolute'>
      <div id='listings_div'></div>
