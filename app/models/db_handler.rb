@@ -44,6 +44,14 @@ class DatabaseHandler
         return properties.to_json
     end
 
+    def self.get_all_properties_from_db
+      arr = []
+      Property.find_each do |property|
+        arr << property
+      end
+      arr.to_json
+    end
+
     def self.add_property_to_DB(json)
         property = convert_from_json(json)
         prop = Property.create(name: property["name"], user_id: property["userID"], userName: property["userName"], description: property["description"], price: property["price"])
