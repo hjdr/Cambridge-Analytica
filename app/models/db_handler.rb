@@ -52,4 +52,12 @@ class DatabaseHandler
     prop = Property.create(name: property['name'], user_id: property['userID'], userName: property['userName'], description: property['description'], price: property['price'])
     prop
   end
+
+  def self.get_all_properties_from_db
+    arr = []
+    Property.find_each do |property|
+      arr << property
+    end
+    arr.to_json
+  end
 end
