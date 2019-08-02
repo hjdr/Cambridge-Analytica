@@ -27,7 +27,7 @@ $(document).ready(function() {
       var propertyList = Property.all(data)
       clearProperties()
       propertyList.forEach(function(property) {
-        $('#listings_table').append(propertyHTML(property));
+        $('#listings_table').delay(1000).append(propertyHTML(property));
         $("#" + property.id).click(function() {
           $.get('http://localhost:9292/user/logged_in/', function(loggedInUser) {
             var user = JSON.parse(loggedInUser)
@@ -88,10 +88,6 @@ $(document).ready(function() {
 
   $('#log_out_link').click(function() {
     $.post('http://localhost:9292/user/logout/');
-  });
-
-  $('#log_out_link').click(function() {
-    $.get('http://localhost:9292/user/bookings/');
   });
 
 });

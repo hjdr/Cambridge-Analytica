@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  getLoggedInUserJson()
+
   updateListings()
 
   // $("#new_listing_button").click(function() {
@@ -21,6 +21,7 @@ $(document).ready(function() {
 
   function updateListings() {
     $.get('http://localhost:9292/user/all_bookings/', function(data) {
+      console.log(data)
       var bookingList = Booking.all(data)
       clearBookings()
       bookingList.forEach(function(booking) {
@@ -32,7 +33,7 @@ $(document).ready(function() {
           $("#confirm" + booking.id).fadeOut("fast", function() {
             $("#tickani").fadeIn("fast")
             $("#tick").replaceWith(animatedTick()).hide("slow");
-            $("#tickani").delay(1500).hide("slow");
+            $("#tickani").delay(1000).hide("slow");
           });
           // $("#confirm" + booking.id).replaceWith("<td>" + animatedTick() + "</td><td>Booking confirmed</td>")
           // })
@@ -47,9 +48,9 @@ $(document).ready(function() {
 
   function propertyHTML(booking) {
     if (booking.confirmed == 'true') {
-      return "<tr>" + propertyName(booking) + propertyConfirmed(booking) + "</tr>";
+      return "<tr class='table'>" + propertyName(booking) + propertyConfirmed(booking) + "</tr>";
     } else {
-      return "<tr>" + propertyName(booking) + propertyConfirmed(booking) + propertyButton(booking) + "</tr>";
+      return "<tr class='table'>" + propertyName(booking) + propertyConfirmed(booking) + propertyButton(booking) + "</tr>";
     }
   }
 
