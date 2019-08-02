@@ -13,9 +13,14 @@
 ActiveRecord::Schema.define(version: 2019_07_31_162642) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "hstore"
   enable_extension "plpgsql"
 
   create_table "add_property_id_to_users", force: :cascade do |t|
+  end
+
+  create_table "my_test_tab", id: false, force: :cascade do |t|
+    t.integer "a"
   end
 
   create_table "properties", force: :cascade do |t|

@@ -40,4 +40,5 @@ getLoggedInUserJson()
     $.post('http://localhost:9292/user/logout/');
   });
 
+
 });

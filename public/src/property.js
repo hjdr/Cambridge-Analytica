@@ -38,6 +38,20 @@ class Property {
     return listings
   }
 
+  // static getAllPropertiesArray(properties) {
+  //   var listings = []
+  //
+  //   for (property key in properties){
+  //     var newListing = new Property(property.name, property.userName, property.description, property.price)
+  //     listings.push(newListing)
+  //   }
+  //   properties.forEach(function(property){
+  //     var newListing = new Property(property.name, property.userName, property.description, property.price)
+  //     listings.push(newListing)
+  //   })
+  //   return listings
+  // }
+
   static create(name, userID, userName, description, price, dateRange) {
     return JSON.stringify({
       name: name,

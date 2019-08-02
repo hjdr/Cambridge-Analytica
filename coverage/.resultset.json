@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/timothycole/OneDrive/Makers/Month_3/Cambridge-Analytica/spec/feature_tests/sign_up_new_user_spec.rb": [
+      "/Users/harryriley/GoogleDrive/Harry/Python/makers/Projects/makers-course/week_6/spec/feature_tests/sign_up_new_user_spec.rb": [
         1,
         1,
         1,
@@ -16,17 +16,11 @@
         null,
         null
       ],
-      "/Users/timothycole/OneDrive/Makers/Month_3/Cambridge-Analytica/spec/unit/db_handler_spec.rb": [
+      "/Users/harryriley/GoogleDrive/Harry/Python/makers/Projects/makers-course/week_6/spec/unit/db_handler_spec.rb": [
         1,
         null,
         null,
         1,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
         null,
         1,
         1,
@@ -34,7 +28,6 @@
         1,
         1,
         1,
-        null,
         null,
         null,
         null,
@@ -48,20 +41,29 @@
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
+        1,
+        1,
+        1,
+        1,
         null,
         null,
         null
       ]
     },
-    "timestamp": 1564651043
+    "timestamp": 1564673142
   }
 }

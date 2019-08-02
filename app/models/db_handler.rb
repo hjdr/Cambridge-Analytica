@@ -15,12 +15,19 @@ class DatabaseHandler
       p check_user_in_db(user)
         if check_user_in_db(user) != nil
           user_name = Users.find_by(user_name: user['userName'])
-          check_user_in_db(user).to_json   if user_name.password == user['password']
+          check_user_in_db(user).to_json if user_name.password == user['password']
         else
           'false'
         end
     end
 
+    def self.get_all_properties_from_db
+      arr = [] 
+      Property.find_each do |property|
+        arr << property
+      end
+      arr.to_json
+    end
 
     private
 
@@ -44,7 +51,3 @@ class DatabaseHandler
     end
 
 end
-
-p DatabaseHandler.add_to_DB('{"userName":"kettz","password":"charlie"}')
-
-p DatabaseHandler.confirm_user_exists('{"userName":"kettz","password":"charlie"}')
