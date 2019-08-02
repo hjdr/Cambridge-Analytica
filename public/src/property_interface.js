@@ -1,6 +1,5 @@
 $(document).ready(function() {
   getLoggedInUserJson()
-  updateListings()
 
   $("#new_listing_button").click(function() {
     $.get('http://localhost:9292/user/logged_in/', function(data) {
@@ -13,6 +12,12 @@ $(document).ready(function() {
     })
   });
 
+  $('.new_listing_button').one('click', function() {
+    $('#new_listing_table').animate({
+      'marginLeft': "-=700px"
+    });
+  })
+
   function updateListings() {
     $.get('http://localhost:9292/user/all_listings/', function(data) {
       var propertyList = Property.all(data)
@@ -24,7 +29,7 @@ $(document).ready(function() {
             var user = JSON.parse(loggedInUser)
             $.post('http://localhost:9292/booking/new/', Booking.create(user.id, user.id, property.id, property.name, '', '', false))
             clearProperties()
-            $('#listings_table').append("<tr><td>" + animatedTick() + "</td><td><h3>Thank you for booking " + property.name + ".</h3></td></tr><td><h3>Please wait for confirmation from the host.</h3></td>")
+            $('#listings_table').append("<tr><td>" + animatedTick() + "</td></tr><tr><td><h3>Thank you for booking " + property.name + ".</h3></td></tr><td><h3>Please wait for confirmation from the host.</h3></td>")
           })
         })
       })
@@ -32,17 +37,17 @@ $(document).ready(function() {
   };
 
   function animatedTick() {
-    return "<svg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 130.2 130.2'><circle class='path circle' fill='none' stroke='#73AF55' stroke-width='6' stroke-miterlimit='10' cx='65.1' cy='65.1' r='62.1'/><polyline class='path check' fill='none' stroke='#73AF55' stroke-width='6' stroke-linecap='round' stroke-miterlimit='10' points='100.2,40.2 51.5,88.8 29.8,67.5 '/></svg><p class='success'>Awesome!</p>"
+    return "<svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\"><circle class=\"checkmark__circle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\"/><path class=\"checkmark__check\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\"/></svg>"
   }
 
   function propertyHTML(property) {
     return "<tr>" +
-    propertyName(property) +
-    propertyDescription(property) +
-    propertyPrice(property) +
-    propertyHost(property) +
-    propertyButton(property) +
-    "</tr>";
+      propertyName(property) +
+      propertyDescription(property) +
+      propertyPrice(property) +
+      propertyHost(property) +
+      propertyButton(property) +
+      "</tr>";
   }
 
   function propertyName(property) {

@@ -32,11 +32,8 @@ class Property {
   static all(json) {
     var listingsParse = JSON.parse(json);
     var listings = []
-    console.log(listingsParse)
     listingsParse.forEach(function(listing) {
-      console.log(listing)
       var newListing = new Property(listing.name, listing.userID, listing.userName, listing.description, listing.price, listing.id)
-      console.log(newListing)
       listings.push(newListing)
     });
     return listings
