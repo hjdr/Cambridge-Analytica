@@ -24,6 +24,7 @@ enable :sessions
 
   get '/user/all_listings/' do
     user = JSON.parse(session[:logged_in_user])
+    p DatabaseHandler.all_user_listings(user)
     return DatabaseHandler.all_user_listings(user)
   end
 
@@ -63,11 +64,13 @@ enable :sessions
   end
 
   get '/properties/view_all/' do
+    session[:logged_in_user]
     File.read("views/properties/view_all.html")
   end
 
   get '/properties/get_all/' do
-    DatabaseHandler.get_all_properties_from_db
+    session[:logged_in_user]
+    p DatabaseHandler.get_all_properties_from_db
   end
 
   run! if app_file == $PROGRAM_NAME

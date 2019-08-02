@@ -22,7 +22,7 @@ class DatabaseHandler
     end
 
     def self.get_all_properties_from_db
-      arr = []
+      arr = [] 
       Property.find_each do |property|
         arr << property
       end
