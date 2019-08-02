@@ -24,6 +24,7 @@ enable :sessions
 
   get '/user/all_listings/' do
     user = JSON.parse(session[:logged_in_user])
+    p DatabaseHandler.all_user_listings(user)
     return DatabaseHandler.all_user_listings(user)
   end
 
@@ -68,6 +69,7 @@ enable :sessions
     session[:logged_in_user] = nil
   end
 
+<<<<<<< HEAD
   post '/booking/new/' do
     payload = request.body.read
     DatabaseHandler.add_booking_to_DB(payload)
@@ -75,6 +77,16 @@ enable :sessions
 
   get '/booking/all/' do
     File.read("views/booking/all.html")
+=======
+  get '/properties/view_all/' do
+    session[:logged_in_user]
+    File.read("views/properties/view_all.html")
+  end
+
+  get '/properties/get_all/' do
+    session[:logged_in_user]
+    p DatabaseHandler.get_all_properties_from_db
+>>>>>>> origin
   end
 
   run! if app_file == $PROGRAM_NAME
