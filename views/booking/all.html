@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/styles/bootstrap.min.css">
+  <script src="/styles/jquery.min.js"></script>
+  <script src="/styles/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/styles/style.css"/>
+  <script src="/src/property.js"></script>
+  <script src="/src/booking.js"></script>
+  <script src="/src/user.js"></script>
+  <script src="/node_modules/jquery/dist/jquery.js"></script>
+  <script src="/src/bookings_interface.js"></script>
+</head>
+
+<body class="fontAv">
+  <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand fontAv" href="#">Makers B'n'B</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active fontAv"><a href="/">Home</a></li>
+          <li class="active fontAv"><a id="view_bookings" href="/booking/all/">View Bookings</a></li>
+          <li class="active fontAv"><a id="log_out_link" href="/">Log Out</a></li>
+        </ul>
+      </div>
+    </nav>
+  <center>  <h3 class="bottom">Your Bookings</h3>
+    <table id="listings_table">
+    </table></center>
+    <center>
+      <div id="tick">
+      </div></center>
+    <footer style='position: absolute; bottom: 10px; left: 50%;' class="page-footer font-small blue top page-bottom">
+
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019  Copyright
+          <a href="#"> Cambridge Analytica</a>
+        </div>
+        <!-- Copyright -->
+
+      </footer>
+</body>
+
+</html>

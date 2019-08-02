@@ -12,9 +12,13 @@ $(document).ready(function() {
     })
   });
 
-  $('.new_listing_button').one('click', function() {
+  $("#view_properties_button").click(function() {
+      updateListings()
+  });
+
+  $('#new_listing_button,#view_properties_button').one('click', function() {
     $('#new_listing_table').animate({
-      'marginLeft': "-=700px"
+      'marginLeft': "-=300px"
     });
   })
 
@@ -36,12 +40,13 @@ $(document).ready(function() {
     })
   };
 
+
   function animatedTick() {
     return "<svg class=\"checkmark\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 52 52\"><circle class=\"checkmark__circle\" cx=\"26\" cy=\"26\" r=\"25\" fill=\"none\"/><path class=\"checkmark__check\" fill=\"none\" d=\"M14.1 27.2l7.1 7.2 16.7-16.8\"/></svg>"
   }
 
   function propertyHTML(property) {
-    return "<tr>" +
+    return "<tr class='table' style='marginLeft: 10rem'>" +
       propertyName(property) +
       propertyDescription(property) +
       propertyPrice(property) +

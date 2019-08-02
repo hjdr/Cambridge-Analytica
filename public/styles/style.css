@@ -1,3 +1,18 @@
+.inliner {
+  display: inline-flex;
+  margin: 20px;
+}
+
+.moveRight {
+  position: relative;
+  left: 15rem;
+}
+
+#listings_table {
+  position: relative;
+  left: 5rem;
+}
+
 .btnWidth {
     width: 8rem;
 }
@@ -28,6 +43,10 @@
 
 .zero {
   margin: 0;
+}
+
+tr {
+  height:50px
 }
 
 .checkmark__circle {

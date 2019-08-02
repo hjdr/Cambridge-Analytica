@@ -27,6 +27,12 @@ enable :sessions
     return DatabaseHandler.all_user_listings(user)
   end
 
+  get '/user/all_bookings/' do
+    p 'test'
+    user = JSON.parse(session[:logged_in_user])
+    return DatabaseHandler.all_user_bookings(user)
+  end
+
   get '/user/login/' do
     File.read("views/user/login.html")
   end

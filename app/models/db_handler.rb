@@ -41,6 +41,12 @@ class DatabaseHandler
     properties.to_json
   end
 
+  def self.all_user_bookings(user)
+    bookings = Bookings.where(renter_id: user['id']).or(Bookings.where(landlord_id: user['id']))
+    p bookings
+    bookings.to_json
+  end
+
   def self.add_property_to_DB(json)
     property = convert_from_json(json)
     prop = Property.create(name: property['name'], user_id: property['userID'], userName: property['userName'], description: property['description'], price: property['price'])
