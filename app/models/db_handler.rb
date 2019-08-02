@@ -22,14 +22,12 @@ class DatabaseHandler
     end
 
     def self.get_all_properties_from_db
-      arr = []
+      arr = [] 
       Property.find_each do |property|
         arr << property
       end
       arr.to_json
     end
-
-    private
 
     def self.check_user_in_db(user)
       Users.find_by(user_name: user['userName'])
@@ -45,11 +43,11 @@ class DatabaseHandler
     end
 
     def self.get_all_properties_from_db
-      arr = []
+      all_properties = []
       Property.find_each do |property|
-        arr << property
+        all_properties << property
       end
-      arr.to_json
+      all_properties.to_json
     end
 
     def self.add_property_to_DB(json)
@@ -58,4 +56,11 @@ class DatabaseHandler
         return prop
     end
 
+    def self.search_db_for_prop_name(property_name)
+      found_properties = []
+      Property.where("name like ?", "%#{property_name}%").find_each do |property|
+        found_properties << property
+      end
+      found_properties.to_json
+    end
 end
