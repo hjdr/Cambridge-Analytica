@@ -63,7 +63,12 @@ enable :sessions
   end
 
   post '/booking/new/' do
-    p 'yes'
+    payload = request.body.read
+    DatabaseHandler.add_booking_to_DB(payload)
+  end
+
+  get '/booking/all/' do
+    File.read("views/booking/all.html")
   end
 
   run! if app_file == $PROGRAM_NAME

@@ -3,6 +3,7 @@
 require 'json'
 require './app/models/userDB.rb'
 require './app/models/property.rb'
+require './app/models/bookings.rb'
 
 class DatabaseHandler
   def self.add_to_DB(json)
@@ -13,7 +14,6 @@ class DatabaseHandler
 
   def self.confirm_user_exists(json)
     user = convert_from_json(json)
-    p check_user_in_db(user)
     if !check_user_in_db(user).nil?
       user_name = Users.find_by(user_name: user['userName'])
       check_user_in_db(user).to_json if user_name.password == user['password']
@@ -26,12 +26,10 @@ class DatabaseHandler
     Users.find_by(user_name: user['userName'])
   end
 
-  def self.get_property(id)
-    idnew = id[1..-1].to_i
-    p idnew
-    new = Properties.find_by(id: idnew).to_json
-    p new
-    new
+  def self.add_booking_to_DB(json)
+    booking = convert_from_json(json)
+    booking = Bookings.create(renter_id: booking['renter_id'], landlord_id: booking['landlord_id'], property_id: booking['property_id'], property_name: booking['property_name'], start_date: booking['start_date'], end_date: booking['end_date'], confirmed: booking['confirmed'])
+    booking
   end
 
   def self.convert_from_json(json)
@@ -49,7 +47,3 @@ class DatabaseHandler
     prop
   end
 end
-
-p DatabaseHandler.add_to_DB('{"userName":"kettz","password":"charlie"}')
-
-p DatabaseHandler.confirm_user_exists('{"userName":"kettz","password":"charlie"}')
